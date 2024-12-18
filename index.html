@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Turn words into wrods." />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+    <style>
+        textarea {
+            field-sizing: content;
+        }
+
+        @media (prefers-color-scheme: light) {
+            .bottom-link {
+                color: hsl(0, 0%, 29%) !important;
+            }
+        }
+    </style>
+    <!-- ANALYTICS_SCRIPT_PLACEHOLDER -->
+    <title>MakeWrods</title>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title has-text-centered">MakeWrods</h1>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half">
+                    <form onsubmit="event.preventDefault(); processWords()">
+                        <div class="field">
+                            <label class="label" for="textInput">Enter Words</label>
+                            <div class="control grow-wrap">
+                                <textarea class="textarea" id="textInput" rows="20"></textarea>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="select is-right">
+                                <select id="heatDropdown">
+                                    <option value="1" selected>Nromla</option>
+                                    <option value="2">Diufifclt</option>
+                                    <option value="3">Cnahlnleigg</option>
+                                    <option value="4">PmobislsIe</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="control button-container">
+                                <button id="submitButton" class="button is-link is-fullwidth" type="submit">Make
+                                    Wrods</button>
+                            </div>
+                        </div>
+                    </form>
+                    <article id="responsePanel" class="message is-success" style="display: none; margin-top: 1rem;">
+                        <div class="message-body table-container" style="white-space: pre-wrap;"></div>
+                        <button id="copyWrodsButton" class="button" onclick="copyWrods()">Cpoy to Clpibaord</button>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-half has-text-centered">
+                    <a class="has-text-grey-light is-underlined is-family-monospace has-text-weight-semibold bottom-link"
+                        href="https://github.com/ImranR98/makewrods" target="_blank">Source Code</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+
+</html>
